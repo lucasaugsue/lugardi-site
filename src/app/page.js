@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import MainBanner from "@/components/MainBanner";
 import NavigationBar from "@/components/NavigationBar";
 import NewsAndPoll from "@/components/NewsAndPoll";
+import CarouselCharacters from "@/components/CarouselCharacters";
 import PromotionalMessage from "@/components/PromotionalMessage";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
       <PromotionalMessage></PromotionalMessage>
       <MainBanner></MainBanner>
       <NewsAndPoll></NewsAndPoll>
+      <CarouselCharacters />
       <Footer></Footer>
     </div>
   );
