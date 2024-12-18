@@ -29,6 +29,13 @@ const Footer = () => {
             </a>
             <a href="#" className="hover:text-white">
               <img
+                src="/instagram.svg"
+                alt="Instagram"
+                className="w-6 h-6 cursor-pointer"
+              />
+            </a>
+            <a href="#" className="hover:text-white">
+              <img
                 src="/tiktok.svg"
                 alt="TikTok"
                 className="w-6 h-6 cursor-pointer"
@@ -38,13 +45,6 @@ const Footer = () => {
               <img
                 src="/facebook.svg"
                 alt="Facebook"
-                className="w-6 h-6 cursor-pointer"
-              />
-            </a>
-            <a href="#" className="hover:text-white">
-              <img
-                src="/instagram.svg"
-                alt="Instagram"
                 className="w-6 h-6 cursor-pointer"
               />
             </a>
