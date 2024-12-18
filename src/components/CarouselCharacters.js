@@ -31,7 +31,7 @@ const characters = [
 
 const CarouselCharacters = () => {
   return (
-    <div className="w-full py-20 bg-[#1b1b2f] px-20">
+    <div className="w-full py-20 bg-gradient-to-t from-[#1A1734] to-black px-20">
       <h2 className="text-center text-white text-4xl font-semibold mb-8">
         MONTHLY MAGICAL PICKS
       </h2>
@@ -50,7 +50,7 @@ const CarouselCharacters = () => {
       >
         {characters.map((character, index) => (
           <SwiperSlide key={index}>
-            <div className="rounded-lg overflow-hidden shadow-lg border-2 border-[#6a0dad] bg-gradient-to-b from-[#53387E] to-[#2C1A4C] text-white">
+            <div className="rounded-lg overflow-hidden shadow-lg border-2 border-black bg-gradient-to-b from-[#53387E] to-[#2C1A4C] text-white">
               <img
                 src={character.image}
                 alt={character.name}

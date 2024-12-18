@@ -2,7 +2,7 @@ import React from "react";
 
 const MainBanner = () => {
   return (
-    <div className="bg-[#2E274B] flex flex-col items-center justify-center text-white px-6 py-10">
+    <div className="bg-gradient-to-t from-[#1A1734] to-[#5850A8] flex flex-col items-center justify-center text-white px-6 py-10">
         <h1 className="text-5xl lg:text-6xl font-bold uppercase tracking-wide mb-6 leading-tight max-w-3xl text-center">
             Watch Episode Three of Hogwarts Hangout: A Wizarding Christmas
         </h1>
