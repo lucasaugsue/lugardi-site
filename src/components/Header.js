@@ -70,7 +70,7 @@ const Header = () => {
 
         {/* Search and Buttons */}
         <div className="flex items-center gap-4 absolute right-6">
-          <div className="relative">
+          {/* <div className="relative">
             <input
               type="text"
               placeholder="Search"
@@ -83,7 +83,7 @@ const Header = () => {
                 className="w-6 h-6 cursor-pointer"
               />
             </button>
-          </div>
+          </div> */}
 
           <button className="px-4 py-2 border border-white rounded hover:bg-white hover:text-gray-900">
             Login
