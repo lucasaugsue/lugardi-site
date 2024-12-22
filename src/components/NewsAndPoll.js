@@ -4,7 +4,7 @@ import NewCards from "./NewCards";
 
 const NewsAndPoll = () => {
   return (
-    <div className="flex flex-col lg:flex-row gap-8 p-6 bg-[#1A1734] text-white py-10 px-20">
+    <div className="flex flex-col lg:flex-row p-6 bg-[#1A1734] text-white gap-12 lg:gap-10 py-6 lg:py-10 px-10 lg:px-20">
       <div className="flex-1">
         <NewCards />
       </div>

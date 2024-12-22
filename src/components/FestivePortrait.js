@@ -6,7 +6,7 @@ const FestivePortrait = () => {
       <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row items-center justify-between rounded-lg shadow-lg w-full">
         {/* Lado esquerdo - Imagem */}
         <div className="relative w-full md:w-1/2 flex justify-center">
-          <div className="w-[400px] h-[300px] border-[2px] border-transparent rounded-[50%] overflow-hidden shadow-[0px_0px_20px_10px_rgba(87,88,255,0.3)]">
+          <div className="w-[350px] lg:w-[400px] h-[225px] lg:h-[300px] border-[2px] border-transparent rounded-[50%] overflow-hidden shadow-[0px_0px_20px_10px_rgba(87,88,255,0.3)]">
             <img
               src="https://via.placeholder.com/400x300"
               alt="Festive Portraits"

@@ -25,7 +25,7 @@ const NewCards = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 lg:gap-10">
       {cardsData.map((card, index) => (
         <div
           key={index}
