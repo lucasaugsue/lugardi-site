@@ -4,11 +4,9 @@ import NewCards from "./NewCards";
 
 const NewsAndPoll = () => {
   return (
-    <div className="flex flex-col lg:flex-row p-6 bg-[#1A1734] text-white gap-12 lg:gap-10 py-6 lg:py-10 px-10 lg:px-20">
-      <div className="flex-1">
+    <div className="bg-[#1A1734] p-10">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-10">
         <NewCards />
-      </div>
-      <div className="flex-1 max-w-md mx-auto">
         <Poll />
       </div>
     </div>

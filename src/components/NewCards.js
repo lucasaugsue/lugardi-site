@@ -8,7 +8,7 @@ const NewCards = () => {
   const getPostagens = async () => {
     try {
       const data = await serverRequest({ url: "/postagem", method: "GET" });
-      console.log("Dados recebidos:", data);
+      // console.log("Dados recebidos:", data);
       setCardsData(data)
 
     } catch (error) {
@@ -28,7 +28,7 @@ const NewCards = () => {
           className="bg-[#1E1E2E] rounded-lg overflow-hidden shadow-md relative text-white"
         >
           {/* Imagem com estilo padronizado */}
-          <div className="relative w-full h-40 overflow-hidden">
+          <div className="relative w-full h-[25vh] overflow-hidden">
             <img
               src={card.image}
               alt={card.title}
@@ -37,7 +37,7 @@ const NewCards = () => {
           </div>
 
           {/* Título com fundo redondo */}
-          <div className="absolute top-32 left-4 bg-[#2E274B] text-white px-4 py-2 rounded-full text-xs font-semibold shadow-md">
+          <div className="absolute bottom-12 left-4 bg-[#2E274B] text-white px-4 py-2 rounded-full text-xs font-semibold shadow-md">
             {card.title.toUpperCase()}
           </div>
 
