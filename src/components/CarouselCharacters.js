@@ -1,24 +1,34 @@
 "use client";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { useRouter } from "next/navigation"; // Importa a função de navegação
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Autoplay } from "swiper/modules";
-
-const characters = [
-  { name: "Nearly Headless Nick", image: "https://via.placeholder.com/300x400" },
-  { name: "Moaning Myrtle", image: "https://via.placeholder.com/300x400" },
-  { name: "Minerva McGonagall", image: "https://via.placeholder.com/300x400" },
-  { name: "Death Eaters", image: "https://via.placeholder.com/300x400" },
-  { name: "Albus Dumbledore", image: "https://via.placeholder.com/300x400" },
-];
+import { serverRequest } from "@/utils/serverRequest";
 
 const CarouselCharacters = () => {
   const router = useRouter();
 
-  const handleCardClick = (characterName) => {
-    router.push(`/personagens?name=${characterName}`); // Redireciona com parâmetro de nome
+  const [characters, setCharacters] = useState([]);
+  
+    const getPersonagens = async () => {
+      try {
+        const data = await serverRequest({ url: "/personagem", method: "GET" });
+        console.log("Dados recebidos:", data);
+        setCharacters(data)
+  
+      } catch (error) {
+        console.error("Erro ao buscar dados:", error);
+      }
+    }
+  
+    useEffect(() => {
+      getPersonagens(); 
+    }, []);
+
+  const handleCardClick = (characterTag) => {
+    router.push(`/personagens?name=${characterTag}`); // Redireciona com parâmetro de nome
   };
 
   return (
@@ -44,10 +54,10 @@ const CarouselCharacters = () => {
           <SwiperSlide key={index}>
             <div
               className="rounded-lg overflow-hidden shadow-lg border-2 border-black bg-gradient-to-b from-[#53387E] to-[#2C1A4C] text-white cursor-pointer"
-              onClick={() => handleCardClick(character.name)}
+              onClick={() => handleCardClick(character.personagem_tag)}
             >
               <img
-                src={character.image}
+                src={character.images}
                 alt={character.name}
                 className="w-full h-80 object-cover"
               />
