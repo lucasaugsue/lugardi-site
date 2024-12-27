@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Configuração padrão para as requisições
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8181", // Substitua pela URL base da sua API
+  baseURL: process.env.URL || "http://localhost:8181", 
   timeout: 5000, // Tempo limite para a requisição
   headers: {
     "Content-Type": "application/json",
