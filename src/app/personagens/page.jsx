@@ -43,16 +43,16 @@ const Conteudo = ({ character, characterTag }) => (
             className="rounded-lg shadow-md mb-4"
           />
           <div className="p-6 flex space-x-4">
-            {["https://via.placeholder.com/150",
-              "https://via.placeholder.com/150"
-            ].map((src, index) => (
-              <img
-                key={index}
-                src={src}
-                alt="Character thumbnail"
-                className="w-24 h-24 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
-              />
-            ))}
+            {["https://via.placeholder.com/150", "https://via.placeholder.com/150"].map(
+              (src, index) => (
+                <img
+                  key={index}
+                  src={src}
+                  alt="Character thumbnail"
+                  className="w-24 h-24 rounded-lg shadow-md cursor-pointer hover:scale-105 transition-transform"
+                />
+              )
+            )}
           </div>
         </div>
         <div className="md:w-1/2 p-6 bg-[#3D3458] rounded-lg">
@@ -127,14 +127,21 @@ const CharacterLoader = ({ characterTag }) => {
   return <Conteudo character={character} characterTag={characterTag} />;
 };
 
-const PersonagemPage = () => {
+// Novo componente para obter o characterTag
+const FetchCharacterTag = ({ children }) => {
   const searchParams = useSearchParams();
   const characterTag = searchParams.get("name") || "Personagem Desconhecido";
 
+  return children(characterTag);
+};
+
+const PersonagemPage = () => {
   return (
     <Layout>
       <Suspense fallback={<div>Loading...</div>}>
-        <CharacterLoader characterTag={characterTag} />
+        <FetchCharacterTag>
+          {(characterTag) => <CharacterLoader characterTag={characterTag} />}
+        </FetchCharacterTag>
       </Suspense>
     </Layout>
   );
