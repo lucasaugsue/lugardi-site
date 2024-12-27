@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation"; 
 
 const menuItems = [
   "News & Features",
@@ -40,6 +41,7 @@ const PromotionalMessage = () => {
 };
 
 const Header = () => {
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -81,16 +83,27 @@ const Header = () => {
 
         {/* Logo */}
         <div className="flex sm:items-center sm:ml-2 md:justify-center md:w-full">
-          <img src="/logo.png" alt="Logo" className="h-12 lg:h-20" />
+          <a href="/">
+            <img
+              src="/logo.png"
+              alt="Logo"
+              className="h-12 lg:h-20 cursor-pointer"
+            />
+          </a>
         </div>
+
 
         {/* Buttons */}
         <div className="flex items-center gap-3 md:gap-4 md:absolute md:right-6">
-          <button className="text-sm px-4 py-2 border border-white rounded hover:bg-white hover:text-gray-900 lg:text-base lg:px-6 lg:py-3">
-            Login
+          <button
+            onClick={() => router.push("/login")} 
+            className="text-sm px-4 py-2 border border-white rounded hover:bg-white hover:text-gray-900 lg:text-base lg:px-6 lg:py-3"
+          > Login
           </button>
-          <button className="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 lg:text-base lg:px-6 lg:py-3">
-            Sign Up
+          <button
+            onClick={() => router.push("/register")} 
+            className="text-sm px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 lg:text-base lg:px-6 lg:py-3"
+          > Sign Up
           </button>
         </div>
       </header>
